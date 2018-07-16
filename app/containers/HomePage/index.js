@@ -18,7 +18,12 @@ export default class HomePage extends React.PureComponent {
   render() {
     return (
       <h1>
-        <FormattedMessage {...messages.header} />
+        <FormattedMessage
+          {...messages.header}
+          values={{
+            name: <i>Eric</i>,
+          }}
+        />
       </h1>
     );
   }

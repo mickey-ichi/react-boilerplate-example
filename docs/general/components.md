@@ -81,7 +81,7 @@ transpiled code in a `lib/` directory.
 In your `package.json`, you probably have something like this:
 
 ```json
-  "main": "lib/index.js"
+  "main": axios.js
 ```
 
 This is what you want when you publish to the registry, but during development

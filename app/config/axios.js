@@ -1,11 +1,13 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
-import { Cookies } from 'services';
+import Cookies from '../services/Cookies';
+
+const cookies = new Cookies();
 
 axios.interceptors.request.use(
   config => {
     // Do something before request is sent
-    const token = Cookies.getCookie('token');
+    const token = cookies.get('token');
     if (token) {
       config.headers.common.Authorization = `Basic ${token}`;
     }

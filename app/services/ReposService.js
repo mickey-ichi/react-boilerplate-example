@@ -1,10 +1,13 @@
-class ReposService {
-  constructor(axios) {
-    this.axios = axios;
-  }
+import axios from '../config/axios';
 
+class ReposService {
+  /**
+   *
+   * @param {string} username
+   * @returns {*}
+   */
   getRepos(username) {
-    this.axios.get(`https://api.github.com/users/${username}/repos`, {
+    return axios.get(`https://api.github.com/users/${username}/repos`, {
       params: {
         type: 'all',
         sort: 'updated',
